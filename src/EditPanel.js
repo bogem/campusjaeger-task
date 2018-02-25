@@ -254,7 +254,7 @@ export default class EditPanel extends React.Component<Props, State> {
           <div className="form-group col-6">
             <label htmlFor="website">Website</label>
             <TextInput
-              forceInvalid={this.state.errors.website}
+              forceInvalid={!!this.state.errors.website}
               id="website"
               onChange={this.handleChange}
               validate={isURL}
@@ -348,7 +348,7 @@ export default class EditPanel extends React.Component<Props, State> {
           <div className="form-group col-6">
             <label htmlFor="phone">Telefonnummer</label>
             <TextInput
-              forceInvalid={this.state.errors.phone}
+              forceInvalid={!!this.state.errors.phone}
               id="phone"
               onChange={this.handlePhoneChange}
               validate={isMobilePhone}
@@ -360,7 +360,7 @@ export default class EditPanel extends React.Component<Props, State> {
           <div className="form-group col-6">
             <label htmlFor="email">E-Mail-Adresse</label>
             <TextInput
-              forceInvalid={this.state.errors.email}
+              forceInvalid={!!this.state.errors.email}
               id="email"
               onChange={this.handleChange}
               validate={isEmail}
