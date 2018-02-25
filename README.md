@@ -6,10 +6,10 @@
 
 ## Aufgabe
 
-Die Entwicklung vom "Praxiserfahrung bearbeiten/hinzufuegen" Element in React.
+Die Entwicklung vom "Praxiserfahrung bearbeiten/hinzufügen" Element in React.
 
 ## Sequenzdiagrammen
 
-[Praxiserfahrung hinzufuegen](https://github.com/bogem/campusjaeger-task/blob/master/UML%20Praxiserfahrung%20hinzuf%C3%BCgen.png)
+[Praxiserfahrung hinzufügen](https://github.com/bogem/campusjaeger-task/blob/master/UML%20Praxiserfahrung%20hinzuf%C3%BCgen.png)
 
 [Praxiserfahrung bearbeiten](https://github.com/bogem/campusjaeger-task/blob/master/UML%20Praxiserfahrung%20bearbeiten.png)
