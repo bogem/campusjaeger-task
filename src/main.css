@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Icons16";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/icons-16.eot?#iefix") format("embedded-opentype"), url("/fonts/icons-16.woff") format("woff"), url("/fonts/icons-16.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Icons20";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/icons-20.eot?#iefix") format("embedded-opentype"), url("/fonts/icons-20.woff") format("woff"), url("/fonts/icons-20.ttf") format("truetype");
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  min-width: 240px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h2, h4, p, span {
+  word-wrap: break-word;
+}
+
+label {
+  color: #989898;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.panel {
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  margin: 0;
+  max-width: 740px;
+  padding: 20px;
+}
+
+.highlight {
+  background-color: rgba(147, 187, 191, 0.7);
+  border-radius: 3px;
+  color: #fff;
+}
+
+a.btn {
+  border-radius: 1px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.77);
+  color: #fff !important;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.cancel-button, .delete-button {
+  margin: 15px 5px;
+}
+
+.valid, .valid:focus {
+  border: 1px solid #a9c837;
+}
+
+.invalid, .invalid:focus {
+  border: 1px solid #bc1c4f;
+}
+
+.error-message {
+  color: #bc1c4f;
+  font-size: 13px;
+  text-align: left;
+}

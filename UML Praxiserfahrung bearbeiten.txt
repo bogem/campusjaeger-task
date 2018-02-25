@@ -1,0 +1,54 @@
+title Praxiserfahrung bearbeiten
+
+App ->* Preview: <<create>>
+
+actor User
+
+User -> Preview: click on "Bearbeiten" button
+
+Preview -> App: this.onEdit();
+
+activate App
+	App -> App: this.handleEdit();
+deactivate App
+
+destroy Preview
+App ->* EditPanel: <<create>>
+
+User -> EditPanel: input required data
+User -> EditPanel: click on "Speichen" button
+
+activate EditPanel
+	EditPanel -> EditPanel: this.handleSave();
+	activate EditPanel
+		EditPanel -> EditPanel: this.checkErrors(data);
+	deactivate EditPanel
+deactivate EditPanel
+
+alt validation errors
+	EditPanel -> EditPanel: this.setState({ errors });
+else no validation errors
+	EditPanel -> App: this.onSave();
+    activate App
+    	App -> App: this.handleSave();
+    deactivate App
+    App ->* Preview: <<create>>;
+end
+
+alt click on "Abbrechen" button
+	EditPanel -> App: this.onCancel();
+    activate App
+    	App -> App: this.handleCancel();
+	deactivate App
+        	App ->* Preview: <<create>>
+else click on "Löschen" button
+	EditPanel -> App: this.onDelete();
+	activate App
+    	App -> App: this.handleDelete();
+    deactivate App
+    App ->* AddButton: <<create>>
+end
+space
+destroy EditPanel
+
+

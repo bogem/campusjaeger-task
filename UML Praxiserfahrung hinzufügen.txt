@@ -1,0 +1,43 @@
+title Praxiserfahrung hinzufügen
+
+App ->* AddButton: <<create>> 
+actor User
+User -> AddButton: click on "Praxiserfahrung hinzufügen" button
+AddButton -> App: onClick();
+
+
+activate App
+	App -> App: this.handleNew();
+deactivate App
+
+destroy AddButton
+App ->* EditPanel: <<create>>
+User -> EditPanel: input required data
+User -> EditPanel: click on "Speichen" button
+
+activate EditPanel
+	EditPanel -> EditPanel: this.handleSave();
+	activate EditPanel
+		EditPanel -> EditPanel: this.checkErrors(data);
+	deactivate EditPanel
+deactivate EditPanel
+
+alt validation errors
+	EditPanel -> EditPanel: this.setState({ errors });
+else no validation errors
+	EditPanel -> App: this.onSave();
+    activate App
+    	App -> App: this.handleSave();
+    deactivate App
+    App ->* Preview: <<create>>;
+end
+
+alt click on "Abbrechen" button
+	EditPanel -> App: this.onCancel();
+    activate App
+    	App -> App: this.handleCancel();
+    deactivate App
+    App ->* AddButton: <<create>>
+end
+space
+destroy EditPanel
